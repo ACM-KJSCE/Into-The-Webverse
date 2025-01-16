@@ -8,6 +8,52 @@
     <title>Expense Calculator || Into The Webverse</title>
 </head>
 <body>
-    Expense Calculator || Into The Webversetest
+    <div class="wrapper">
+        <div class="container">
+            <!-- input  -->
+            <div class="inner-container">
+                <div class="budget">
+                    <h2> Salary/Pocketmoney </h2>
+                    <input type="number" id="total-amt" placeholder="Enter amount"/> 
+                    <button class="submit" id="total-amt-btn"> Set Salary </button>
+                </div>
+
+                <div class="expense">
+                    <h2>Expenses</h2>
+
+                    <input type="text" class="product-name" id="product-name" placeholder="enter type of expense"/>
+                    <input type="number" class="product-amt" id="product-amt" placeholder="enter expense"/>
+                    <button class="submit" id="enter-amt"> Enter Amount</button>
+
+                </div>
+            </div>
+            <!-- budget container -->
+            <div class="budget-container">
+                <div class="">
+                    <p>Total Budget</p>
+                    <span id="bdgt">0</span>
+
+                </div>
+                <div class="">
+                    <p>Expenses</p>
+                    <span id="expns">0</span>
+                </div>
+                <div class="">
+                    <p>Balance</p>
+                    <span id="blnc">0</span>
+                </div>
+            
+
+            </div>
+            <!-- transaction table -->
+             
+            <div class="list">
+                <h2>Expense list</h2>
+                <div class="list-container" id="list-container"></div>
+            </div>
+
+        </div>
+    </div>
 </body>
+    <script src="index.js"/>
 </html>
