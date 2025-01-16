@@ -5,73 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
     <link href="https://fonts.cdnfonts.com/css/comback-home" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./index.js"></script>
     <title>Expense Calculator || Into The Webverse</title>
   </head>
   <body>
-    <img src="./assets/web.png" alt="web" id="web1" />
-    <img src="./assets/web.png" alt="web" id="web2" />
-    <img src="./assets/spiderman.png" alt="spiderman" id="spiderman" />
-    <div class="container">
+    <div class="container"> 
       <p id="title">Expense Tracker</p>
       <div class="wrapper">
-        <div class="budget-balance">
-            <div class="total-budget">
-                <p>Budget: </p>
-                <input
-                type="number"
-                class="expense-name"
-                placeholder="Enter budget"
-                />
-            </div>
-            <button type="submit" class="input-btn1" id="input-btn1"> Enter budget</button>
+        <div class="top-wrapper">
+            <div class="budget-balance">
+                <div class="total-budget">
+                    <p>Budget: </p>
+                    <input
+                    type="number"
+                    class="expense-name"
+                    placeholder="Enter budget"
+                    />
+                </div>
+                <button type="submit" class="input-btn1" id="input-btn1"> Enter budget</button>
 
+                <div class="budget-display">
+                    <div class="budget-show">
+                        budget: &nbsp
+                        <span id="bdgt">0</span>
+                    </div>
+                    <div class="expenditure">
+                        expenditure: &nbsp
+                        <span id="expnd">0</span>
+                    </div>
 
-            <div class="budget-show">
-                budget
-                <span id="bdgt">0</span>
+                    <div class="balance">
+                        balance: &nbsp
+                        <span id="blnc">0</span>
+                    </div>
+                </div>
             </div>
-            <div class="expenditure">
-                expenditure
-                <span id="expnd">0</span>
-            </div>
+            <div class="input">
+                <div class="category">
+                        <p>Category: </p>
+                        <input
+                        type="text"
+                        class="expense-name"
+                        placeholder="Enter name of expense"
+                        />
+                    </div>
+                    <div class="amount">
+                        <p>Amount: </p>
+                        <input
+                        type="number"
+                        class="expense-amt"
+                        placeholder="Expense amount"
+                        />
+                    </div>
 
-            <div class="balance">
-                balance
-                <span id="blnc">0</span>
-            </div>
-        </div>
-        <div class="input">
-          <div class="category">
-                <p>Category: </p>
-                <input
-                type="text"
-                class="expense-name"
-                placeholder="Enter name of expense"
-                />
-            </div>
-            <div class="amount">
-                <p>Amount: </p>
-                <input
-                type="number"
-                class="expense-amt"
-                placeholder="Expense amount"
-                />
-            </div>
-
-            <div class="date">
-                <p id="date">Date: </p>
-                <input
-                    type="date"
-                    class="expense-date"
-                    placeholder="expense date"
-                />
-            </div>
+                    <div class="date">
+                        <p id="date">Date: </p>
+                        <input
+                            type="date"
+                            class="expense-date"
+                            placeholder="expense date"
+                        />
+                    </div>
+                    
+                    <button type="submit" id="input-btn"> Enter details</button>
+                
             
-            <button type="submit" id="input-btn"> Enter details</button>
-            
-          
-        </div>
+            </div>
+        </div>  
 
         <div class="expense-list">
             <h2>&nbsp&nbspExpense List</h2>
@@ -102,6 +105,9 @@
             </div>
         </div>
       </div>
+        <img src="./assets/web.png" alt="web" id="web1" />
+        <img src="./assets/web.png" alt="web" id="web2" />
+        <img src="./assets/spiderman.png" alt="spiderman" id="spiderman" />
     </div>
   </body>
   <script src="index.js" />
