@@ -1,110 +1,102 @@
+
 function onpageload(){
-    const get_display_budget = document.getElementById("bdgt")
-    const get_display_expense = document.getElementById("expns")
-    const get_display_balance = document.getElementById("blnc")
+console.log("page loaded")
+
+//get budget expenditure balance tags 
+const display_budget = document.getElementById("display_budget")
+const display_expenditure = document.getElementById("display_expenditure")
+const display_balance = document.getElementById("display_balance")
+
+//get budget expenditure balance data from local storage
+const get_budget = localStorage.getItem("budget") || "0"
+const get_expenditure = localStorage.getItem("expenditure") || "0"
+const get_balance = get_budget - get_expenditure 
+
+//display budget expenditure balance values 
+display_budget.innerText = get_budget
+display_expenditure.innerText = get_expenditure
+display_balance.innerText = get_balance
+
+
+
+//get all the expense data
+let get_all_expense = localStorage.getItem("all-expense") 
+
+
+//convert json string to object 
+ get_all_expense = JSON.parse(get_all_expense) || [];
+ console.log(get_all_expense[0])
+get_all_expense.map((x,index)=>{
+console.log(index)
+
+const create_row = document.createElement("tr");
+
+const create_cell1 = document.createElement("td")
+create_cell1.innerHTML = x.expense_category
+create_cell1.classList.add("table_row_cell");
+create_row.append(create_cell1);
+
+const create_cell2 = document.createElement("td")
+create_cell2.innerHTML = x.expense_amount
+create_cell2.classList.add("table_row_cell");
+create_row.append(create_cell2);
+
+const create_cell3 = document.createElement("td")
+create_cell3.innerHTML = x.expense_date
+create_cell3.classList.add("table_row_cell");
+create_row.append(create_cell3);
+
+const create_cell4 = document.createElement("button")
+create_cell4.innerHTML = "remove"
+create_cell4.classList.add("table_row_cell");
+create_row.append(create_cell4);
+
+create_cell4.addEventListener("click", () => {
     
-    const display_budget = localStorage.getItem("total-budget")
-    const display_expense = localStorage.getItem("all-expense")
-    const display_balance = localStorage.getItem("balance")
+    create_row.remove();
+ get_all_expense.pop(index)
+    localStorage.setItem("all-expense",JSON.stringify(get_all_expense))
+   
+});
+    const expenseTableBody = document.getElementById("expense_body");
+    expenseTableBody.append(create_row);
+
+})
+
+
+
+
+}
+function setbudget(){
+    const budget_input = document.getElementById("budget_input")
+    console.log(budget_input.value) // get value from input field
+    localStorage.setItem("budget",budget_input.value) // save budget value to local storage
+    budget_input.value=""
+    onpageload()
+}
+function setexpenselist(){
+    const category_input = document.getElementById("category_input")
+    const amount_input = document.getElementById("amount_input")
+    const date_input = document.getElementById("date_input")
     
-    
-    get_display_budget.innerText=display_budget
-    get_display_expense.innerText=display_expense
-    get_display_balance.innerText=display_balance
-    
-    
-    // const aa = display_expense.split("||")
-    // console.log(aa)
-    // const somearr = []
-    // aa.map((x)=>somearr.push(x))
-    // console.log(somearr)
-    // const expensedisplaylist = document.getElementById("list-container")
-    // // aa.map((x)=> expensedisplaylist.append(document.createElement("div").innerText = x.split("*")) )
-    // // somearr.map((x)=> expensedisplaylist.append(document.createElement("div","hh")))
-    // somearr.map((x) => {
-    //     const div = document.createElement("div");
-    //     div.innerHTML =x;
-    //     div.classList.add("hh");
-    //     expensedisplaylist.append(div);
-    // });
-    const a = JSON.parse(display_expense)
-    const expensedisplaylist = document.getElementById("list-container")
-    console.log(a)
-    a.map((x)=>{
-        const div = document.createElement("div");
-        div.innerHTML =x.expensetype +" " + x.expensevalue;
-        div.classList.add("hh");
-        expensedisplaylist.append(div);}
-    )
-    
-    
-    const get_budget = document.getElementById("total-amt")
-    get_budget.value=""
-    
-    
+    const expense_data = {
+        "expense_category":category_input.value,
+        "expense_amount":amount_input.value,
+        "expense_date":amount_input.value,
     }
-    function setbudget(){
-        const get_budget = document.getElementById("total-amt")
-        const get_budget_value = get_budget.value
-        console.log(get_budget_value)
-        localStorage.setItem("total-budget",get_budget_value)
-        
-        onpageload()
+
+    let all_expense_data = localStorage.getItem("all-expense")
+    all_expense_data = all_expense_data ? JSON.parse(all_expense_data) : [];  //ternary conditon ? if true use this : if false use this json parse Converts a JavaScript Object Notation (JSON) string into an object.
+    all_expense_data.push(expense_data);
     
-    }
-    function setexpense(){
-        const get_expensetype = document.getElementById("product-name")
-        const get_expensevalue = document.getElementById("product-amt")
-        const get_expensetype_value = get_expensetype.value
-        const get_expensevalue_value = get_expensevalue.value
-    
-        const all_expense = {
-           "expensetype" : get_expensetype_value,
-           "expensevalue":get_expensevalue_value
-    
-        }
-        
-        let getdata_allexpense_local = localStorage.getItem("all-expense") 
-        // let getdata_allexpense = JSON.parse(getdata_allexpense_local)
-        // if (!getdata_allexpense){
-        //     getdata_allexpense =[]
-        // }
-        // console.log(typeof(all_expense))
-        // let obj0 = localStorage.getItem("test") 
-        // const obj1 = {
-        //     "1":"a",
-        //     "2":"b"
-        // }
-        // const obj2 = {
-        //     "11":"a",
-        //     "22":"b"
-        // }
-        // obj0 = {...obj2}
-        // obj0 = obj0 ? JSON.parse(obj0) : [];
-        // obj0.push(all_expense);
-        getdata_allexpense_local = getdata_allexpense_local ? JSON.parse(getdata_allexpense_local) : [];
-        getdata_allexpense_local.push(all_expense);
-     
-     
-      
-    
-        localStorage.setItem("all-expense",JSON.stringify(getdata_allexpense_local))
-        // console.log(getdata_allexpense)
-        // localStorage.setItem("all-expense",JSON.stringify(getdata_allexpense))
-    
-        // let get_all_expense = localStorage.getItem("all-expense") 
-        // if (!get_all_expense){
-        //     get_all_expense = {}
-        // }
-        // get_all_expense =  
-    
-        
-        // // console.log(get_expensetype_value,get_expensevalue_value)
-        // // const all_expense = get_all_expense + "["+ get_expensetype_value +","+ get_expensevalue_value+"] || ";
-        // // // const all_expense = [ get_all_expense ? "["+ get_expensetype_value +","+ get_expensevalue_value+"]" : "["+ get_expensetype_value +","+ get_expensevalue_value+"]" ]
-        // localStorage.setItem("all-expense",JSON.stringify(get_all_expense))
-        
-        
-        onpageload()
-    
-    }
+    localStorage.setItem("all-expense",JSON.stringify(all_expense_data)) //Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
+
+
+    console.log(category_input.value)
+    category_input.value=""
+    console.log(amount_input.value)
+    amount_input.value=""
+    console.log(date_input.value)
+    date_input.value=""
+    onpageload()
+}

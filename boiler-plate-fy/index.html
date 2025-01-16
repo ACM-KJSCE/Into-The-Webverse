@@ -8,10 +8,10 @@
     <script src="./index.js"></script>
     <title>Expense Calculator || Into The Webverse</title>
   </head>
-  <body>
-    <img src="./assets/web.png" alt="web" id="web1" />
+  <body  onload=onpageload()   >
+    <!-- <img src="./assets/web.png" alt="web" id="web1" />
     <img src="./assets/web.png" alt="web" id="web2" />
-    <img src="./assets/spiderman.png" alt="spiderman" id="spiderman" />
+    <img src="./assets/spiderman.png" alt="spiderman" id="spiderman" /> -->
     <div class="container">
       <p id="title">Expense Tracker</p>
       <div class="wrapper">
@@ -22,25 +22,30 @@
                 type="number"
                 class="expense-name"
                 placeholder="Enter budget"
+                id="budget_input"
                 />
             </div>
-            <button type="submit" class="input-btn1" id="input-btn1"> Enter budget</button>
+            <button type="submit" class="input-btn1" id="input-btn1" onclick=setbudget()  > Enter budget</button>
 
 
             <div class="budget-show">
-                budget
-                <span id="bdgt">0</span>
+                Budget:
+                <span id="display_budget"></span>
             </div>
             <div class="expenditure">
-                expenditure
-                <span id="expnd">0</span>
+                Expenditure:
+                <span id="display_expenditure"></span>
             </div>
 
             <div class="balance">
-                balance
-                <span id="blnc">0</span>
+                Balance:
+                <span id="display_balance"></span>
             </div>
         </div>
+
+
+
+
         <div class="input">
           <div class="category">
                 <p>Category: </p>
@@ -48,6 +53,8 @@
                 type="text"
                 class="expense-name"
                 placeholder="Enter name of expense"
+                id="category_input"
+                required
                 />
             </div>
             <div class="amount">
@@ -56,6 +63,8 @@
                 type="number"
                 class="expense-amt"
                 placeholder="Expense amount"
+                id="amount_input"
+                required
                 />
             </div>
 
@@ -65,30 +74,35 @@
                     type="date"
                     class="expense-date"
                     placeholder="expense date"
+                    id="date_input"
+                    required
                 />
             </div>
             
-            <button type="submit" id="input-btn"> Enter details</button>
-            
+            <button type="submit" id="input-btn" onclick=setexpenselist()  > Enter expense</button>
+      
           
         </div>
 
         <div class="expense-list">
             <h2>&nbsp&nbspExpense List</h2>
             <div class="table">
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Category</th>
+              <table  >
+                  <thead  >
+                      <tr  >
+                          <th >Category</th>
                           <th>Amount</th>
                           <th>Date</th>
                           <th>Delete</th>
                       </tr>
+                      
                   </thead>
 
-                  <tbody id="expense-table-body"> 
+                  <tbody  id="expense_body" > 
 
-
+                    <!-- <tr  id="expense_table">
+                  
+                  </tr> -->
                   </tbody>
 
                   <!-- <tfoot>
