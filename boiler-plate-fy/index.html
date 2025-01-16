@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css" > 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.cdnfonts.com/css/comback-home" rel="stylesheet">
     <script src="./index.js"></script>
     <title>Expense Calculator || Into The Webverse</title>
-</head>
-<body onload=onpageload()>
-    <div class="wrapper">
-        <div class="container">
-            <!-- input  -->
-            <div class="inner-container">
-                <div class="budget">
-                    <h2> Salary/Pocketmoney </h2>
-                    <input type="number" id="total-amt" placeholder="Enter amount" /> 
-                    <button class="submit" id="total-amt-btn" onclick=setbudget() > Set Budget </button>
-                </div>
-
-                <div class="expense">
-                    <h2>Expenses</h2>
-
-                    <input type="text" class="product-name" id="product-name" placeholder="enter type of expense"/>
-                    <input type="number" class="product-amt" id="product-amt" placeholder="enter expense"/>
-                    <button class="submit" id="enter-amt" onclick=setexpense() > Enter Amount</button>
-
-                </div>
+  </head>
+  <body>
+    <img src="./assets/web.png" alt="web" id="web1" />
+    <img src="./assets/web.png" alt="web" id="web2" />
+    <img src="./assets/spiderman.png" alt="spiderman" id="spiderman" />
+    <div class="container">
+      <p id="title">Expense Tracker</p>
+      <div class="wrapper">
+        <div class="input">
+          <div class="category">
+                <p>Category: </p>
+                <input
+                type="text"
+                class="expense-name"
+                placeholder="Enter name of expense"
+                />
             </div>
-            <!-- budget container -->
-            <div class="budget-container">
-                <div class="">
-                    <p>Total Budget</p>
-                    <span id="bdgt"></span>
+            <div class="amount">
+                <p>Amount: </p>
+                <input
+                type="number"
+                class="expense-amt"
+                placeholder="Expense amount"
+                />
+            </div>
 
-                </div>
-                <div class="">
-                    <p>Expenses</p>
-                    <span id="expns">0</span>
-                </div>
-                <div class="">
-                    <p>Balance</p>
-                    <span id="blnc">0</span>
-                </div>
+            <div class="date">
+                <p id="date">Date: </p>
+                <input
+                    type="date"
+                    class="expense-date"
+                    placeholder="expense date"
+                />
+            </div>
             
-
-            </div>
-            <!-- transaction table -->
-             
-            <div class="list">
-                <h2>Expense list</h2>
-                <div class="list-container" id="list-container"></div>
-            </div>
-
+            <button type="submit" id="input-btn"> Enter details</button>
+            
+          
         </div>
+
+        <div class="expense-list">
+            <h2>&nbsp&nbspExpense List</h2>
+            <div class="table">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Category</th>
+                          <th>Amount</th>
+                          <th>Date</th>
+                          <th>Delete</th>
+                      </tr>
+                  </thead>
+
+                  <tbody id="expense-table-body"> 
+
+
+                  </tbody>
+
+                  <tfoot>
+                      <tr>
+                          <td>Total:</td>
+                          <td id="total-amt"</> <td>
+                          <td></td>
+                      </tr>
+                  </tfoot>
+              </table>
+            </div>
+        </div>
+      </div>
     </div>
-</body>
-    <script src="index.js"/>
+  </body>
+  <script src="index.js" />
 </html>

@@ -1,12 +1,167 @@
 *{
-    margin: 0px;
-    font-family: "Gill Sans", sans-serif;
-}
-body{
-    background-color: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
     color: white;
 }
-.hh{
-    border: solid rebeccapurple;
-  
+
+body{
+    background-image: url('./assets/bg.jpeg');
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    
+}
+.wrapper{
+    margin: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin-left: 30vw;
+    padding: 1rem;
+}
+#title{
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Comback home';
+}
+
+#spiderman{
+    position: absolute;
+    height: 100vh;
+    top: 0px;
+    left: 3.9vw;
+
+}
+
+#web2{
+    position: absolute;
+    filter: invert(1);
+    top: -15vh;
+    right: -8vw;
+}
+
+#web1{
+    position: absolute;
+    top: -23vh;
+    left: -14.4vw;
+}
+
+input {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.input{
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.category{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+.amount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+.date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:18px ;
+}
+
+.expense-date{
+    width: 61%;
+}
+
+
+#input-btn{
+    background-color: #DF1F2D;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: monospace;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    
+}
+
+
+.expense-list{
+    margin-left: 5vw;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+    border-radius:10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    overflow:hidden;
+    
+}
+
+.table{
+    margin: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+   background-color: red; 
+   color: black;
+}
+
+tfoot td{
+    font-weight: bold;
+}
+
+.delete-btn{
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
