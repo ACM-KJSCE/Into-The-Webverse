@@ -1,68 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Connect css to html-->
-
-
-    <!--Add font links to html-->
-    <link href="https://fonts.cdnfonts.com/css/comback-home" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Expense Calculator || Into The Webverse</title>
-  </head>
-  <body onload="onPageLoad()">
-    <div class="container">
-       <!-- 1.1 Give the Title here with id as "title" -->
-      <div class="wrapper">
-        <div class="top-wrapper">
-          <div class="budget-balance">
-            <div class="total-budget">
-              <!-- 1.2 Create a paragraph tag with name budget and a div with class as "set-budget" which has input with type as number and id as "budgetInput" and placeholder as "Enter your budget" 
-              and make a button with type 'submit' with class="input-budget" id="input-btn1" and add onclick to set budget-->
-            </div>
-
-
-            <!--1.3 Create a div to show budget, expenditure, balance using grid 
-              class 'budget-display' as parent
-              show budget, expenditure, balance using span with id as "displayBudget", "displayExpenditure", "displayBalance" respectively
-            -->
-
-
-            <div class="budget-display">
-              
-              <!-- 1.4 Create a div to show budget, expenditure, balance with class as "budget-show" , "expenditure-show" , "balance-show" respectively with span -->
-
-            </div>
-
-          <div class="top-wrapper-right">
-            <div class="category-wrapper">
-              <div class="category-inner">
-                <!-- 1.5 Create a div with class as "category" which has 3 divs which has input with type as text and id as 
-                1. "categoryInput" and placeholder as "Enter category" 
-                2. "amountInput" and placeholder as "Enter amount"
-                3. "dateInput" and placeholder as "Enter date" -->
-              </div>
-            </div>
-            <!-- 1.6 Create a button with class as "input-btn" and id as "expenseInput" and add onclick to add expense with setExpense function -->
-          </div>
-        </div>
-
-        <div class="expense-list">
-          <!-- <h2>Expense List</h2> -->
-          <!--1.7 Create a table to display Category, Amount, Date.
-          Also add a delete button-->
-        </div>
-      </div>
-      <!--Add a background with some images with id web1 web2 web3 and spiderman-->
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <!-- link css -->
+          <!--Add font links to html-->
+          <!-- <link href="https://fonts.cdnfonts.com/css/comback-home" rel="stylesheet" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+          /> -->
+          <title>Expense Calculator || Into The Webverse</title>
+        </head>
+        <body onload="onPageLoad()">
+            <!-- 1.1 Give title with class as "title" -->
+          <main>
+            <!-- 1.2 import images with id as web1, web2, web3, spiderman -->
+            <div class="wrapper">
+              <div class="top-wrapper">
+                <div class="top-wrapper-left">
+                  <div class="outer-box">
+                    <!-- 1.2 Create a paragraph tag with name budget and a div with class as "set-budget" which has input with type as number and id as "budgetInput" and placeholder as "Enter your budget" and make a button with type 'submit' with class="input-btn1" id="input-btn1" and add onclick to set budget-->
+                  </div>
       
-    <!--Add script tag to connect js to HTML-->
-    <script src="index.js"></script>
-    
-  </body>
-</html>
+                  <div class="outer-box">
+                    <!--1.3 Create a div to show budget, expenditure, balance with class as "box" for all 3 with a span in each with id displayBudget", "displayExpenditure", "displayBalance" respectively-->
+                  </div>
+      
+                </div>
+                    <div class="top-wrapper-right">
+                        <div class="outer-box">
+                          <!-- create 3 div with class as "box" for all 3 and take input with id "categoryInput", "amountInput","dateInput" and make a button with id "expenseInput" with onclick function as "setExpense()" -->        
+                      </div>
+                    </div>
+      
+                  </div>
+                  <div class="bottom-wrapper">
+                    <h1 class="title" style="font-family: roboto; text-align: left;">Expense List</h1>
+                      <!-- create a table to display category amount date and to add a delete button and it has a tbody with id "expense_body" -->
+                  </div>
+              </div>
+            </main>
+          <script src="index.js"></script>
+        </body>
+      </html>

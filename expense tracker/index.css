@@ -7,64 +7,22 @@
   overflow: hidden;
 }
 
-::-webkit-scrollbar{
-  width: 0.5em;
-}
-
-::-webkit-scrollbar-track{
-  background: #007fd7;
-  border-radius: 100vw;
-  margin-block: 0.2em;
-}
-
-::-webkit-scrollbar-thumb{
-  background: #de0606;
-  border-radius: 100vw;
-  margin-block: 0.5em;
-}
-
 ::placeholder{
-    color: rgba(255, 255, 255, 0.944);
+  color: rgba(255, 255, 255, 0.944);
 }
 
 *:focus {
-  outline: none;
-}
-input {
-  font-size: 15px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  padding: 4px;
-  min-height: 35px;
-  
-}
-body{
-  overflow-y: scroll;
-}
-button:hover {
-  cursor: pointer;
-  opacity: 80%;
-}
-.container {
-  background-image: url("./assets/bg.jpeg");
-  width: 100%;
-  position: absolute;
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -2;
-  text-shadow: 2px 2px #000000;
+outline: none;
 }
 
-#title {
-  text-align: center;
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: "comback home";
+body {
+  background-image: url("./assets/bg.jpeg");
+  width: 100vw;
+  position: absolute;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #901333;
 }
 
 #web1 {
@@ -96,157 +54,104 @@ button:hover {
 #spiderman {
   position: absolute;
   height: 100vh;
-  top: 0px;
+  bottom: 0px;
   left: 3.9vw;
   z-index: -1;
 }
 
+.title {  
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: "comback home";
+  text-shadow: 2px 2px #000000;
+  padding: 1rem 0;
+}
+
 .wrapper {
-  margin-left: 23vw;
-  margin-top: 1%;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 4rem;
   font-size: 1.5rem;
+  z-index: 2; 
+  width: 100%;
+  gap: 4rem;
 }
 
 .top-wrapper {
   display: flex;
   flex-direction: row;
-  margin: 4%;
-
- 
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
 }
 
-.total-budget {
-  margin-left: 8px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  flex-direction: row;
-  align-items: top;
-  
+.top-wrapper-left, .top-wrapper-right {
+  flex-direction: column;
+  justify-content: space-between;
 }
-.budget-name {
-  margin-top: 12px;
-  font-weight: bold;
+
+
+input {
+  font-size: 15px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  min-height: 35px;
+  width: fit-content;
+  min-width: 50%;
 }
-.set-budget {
+
+.outer-box {
   display: flex;
   flex-direction: column;
+  margin: 0 10px;
 }
-.input-btn1 {
+
+.box {
+  margin: 10px 0px;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+
+}
+
+button{
   padding: 4px;
   min-height: 30px;
-  max-width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   border-radius: 9px;
   background-color: #df1f2d;
   border: transparent;
-  text-align: center;
-  margin: 10px;
-}
-.expense-name {
-  margin: 10px;
-}
-.budget-show {
-  margin: 8px;
-}
-.expenditure {
-  margin: 8px;
-}
-.balance {
-  margin: 8px;
-}
-.budget-display {
-  margin: 10px 10px 10px 0px;
-  font-weight: bold;
-  width: 100%;
 }
 
-.input {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 10px;
-  height: max-content;
+button:hover{
+  cursor: pointer;
+  opacity: 80%;
 }
 
-.category-inner {
-  display: flex;
-  flex-direction: column;
-}
-.category-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.category-wrapper {
-  display: flex;
-  flex-direction: row;
-  margin: 0px 10px 10px 10px;
-
-}
-
-.category-input input{
-    margin: 12px;
-}
-
-.category,
-.date,
-.amount {
-  margin: 10px;
-  padding: 5px;
-  font-weight: bold;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-}
-
-.input-btn {
-    padding: 4px;
-    min-height: 30px;
-    max-width: 100%;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 9px;
-    background-color: #df1f2d;
-    border: transparent;
-    text-align: center;
-    margin: 10px;
-}
-
-.expense-list {
-  z-index: 100;
-  padding: 10px;
+.bottom-wrapper {
+  padding: 16px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(6px);
   overflow-y: scroll;
-  max-height: 35vh;
+  max-height: 40vh;
   overflow-x: hidden;
   text-shadow: none;
 }
 
-.table {
-  margin: 20px;
-}
-
-.expense-list button {
-  background-color: #1e5ea3;
-  width: 80%;
-  margin: 10px;
-  border: none;
-  height: fit-content;
-  padding: 10px;
-  border-radius: 10px;
-}
-.expense-list button:hover {
-  background-color: #db2351;
-}
-.expense-list td {
+.bottom-wrapper td {
   padding: 10px;
   word-wrap: break-word;
   max-width: 130px;
@@ -259,7 +164,6 @@ table {
   border: 2px solid black;
   border-radius: 100px;
 }
-
 th {
   border: 2px solid black;
   margin: 10px;
@@ -271,84 +175,72 @@ th {
   text-align: left;
 }
 
-.budget-show, .expenditure, .balance {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-}
 
-tr, td {
+tr, tr button, td {
   border: 2px solid black;
   margin: 10px;
   padding: 8px;
-  text-align: left;
   color: white;
   width: 150px;
   text-align: left;
 }
 
-
-
-@media screen and (max-width: 860px) {
-  * {
+@media screen and (max-width: 1024px) {
+  body{
     overflow-y: auto;
   }
 
   .wrapper {
-    margin-top: -2vh;
-    margin-left: 0vw;
+    justify-content: center;
+    align-items: center;
   }
 
   .top-wrapper {
-    display: grid;
+    padding: 10px 0;
+    display: flex;
     flex-direction: column;
-    z-index: 100;
-    margin-left: 5vw;
-    padding: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(6px);
-    text-shadow: none;
-     
-  }
-
-  .budget-balance {
-    margin-left: 5%;
-  }
-
-  .category-wrapper {
-    margin-left: 0;
-  }
-
-  .expense-list {
-    font-size: 1rem;
-    width: 90%;
-    margin: 2%;
-    max-height: 20vh;
-    margin-left: 5vw;
-  }
-
-  .total-budget{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .expense-name, .input-btn1{
-    margin: 0;
-    margin-top: 10px;
-  }
+  } 
 }
 
 @media  screen and (max-width: 480px) {
-  .category , .date, .amount, input {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .title{
+    font-size: 3rem;
   }
 
-  .budget-show, .expenditure, .balance {
-    font-size: 1rem;
+  .wrapper{
+    margin-top: 1rem;
   }
+  .top-wrapper, .box{
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    width: 90vw;
+  }
+
+  input{
+    width: 100%;
+  }
+
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #007fd7;
+  border-radius: 100vw;
+  margin-block: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #de0606;
+  border-radius: 100vw;
+  margin-block: 0.5em;
 }

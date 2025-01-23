@@ -13,5 +13,5 @@ Into-The-Webverse
 │      └─── my-js-website.html
 ├─── expense-tracker
 │      └─── ...
-├─── README.md  
+├─── README.md
 ```
