@@ -1,5 +1,11 @@
 # Into-The-Webverse
 
+_Hello Spiderman Fans !!_
+
+**Let's Learn Foundation of Web Dev with Fun**
+
+We have made a fun exercise for you, in `expense-tracker` folder.
+
 Folder Structure
 
 ```
