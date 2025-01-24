@@ -4,6 +4,7 @@
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <!-- link css -->
+           <link rel="stylesheet" href="index.css">
           <!--Add font links to html-->
           <!-- <link href="https://fonts.cdnfonts.com/css/comback-home" rel="stylesheet" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,23 +17,59 @@
         </head>
         <body onload="onPageLoad()">
             <!-- 1.1 Give title with class as "title" -->
+             <h1 class="title">Expense Tracker</h1>
           <main>
             <!-- 1.2 import images with id as web1, web2, web3, spiderman -->
+            
+            <img src="./assets/web.png" alt="web" id="web1" />
+            <img src="./assets/web.png" alt="web" id="web2" />
+            <img src="./assets/web.png" alt="web" id="web3" />
+            <img src="./assets/spiderman.png" alt="spiderman" id="spiderman" />
             <div class="wrapper">
               <div class="top-wrapper">
                 <div class="top-wrapper-left">
                   <div class="outer-box">
                     <!-- 1.2 Create a paragraph tag with name budget and a div with class as "set-budget" which has input with type as number and id as "budgetInput" and placeholder as "Enter your budget" and make a button with type 'submit' with class="input-btn1" id="input-btn1" and add onclick to set budget-->
+                     <div class="box">
+                      <p>Budget</p>
+                      <input type="number" placeholder="enter budget" id="budgetInput"/>
+                    </div>
+                    <button type="submit" id="input-btn1" onclick="setBudget()">Enter Budget</button>
                   </div>
       
                   <div class="outer-box">
                     <!--1.3 Create a div to show budget, expenditure, balance with class as "box" for all 3 with a span in each with id displayBudget", "displayExpenditure", "displayBalance" respectively-->
+
+                    <div class="box">
+                      Budget: <span id="displayBudget">0</span>
+                    </div>
+                    <div class="box">
+                      Expenditure: <span id="displayExpenditure">0</span>
+                    </div>
+                    <div class="box">
+                      Balance: <span id="displayBalance">0</span>
+                    </div>
                   </div>
       
                 </div>
                     <div class="top-wrapper-right">
                         <div class="outer-box">
-                          <!-- create 3 div with class as "box" for all 3 and take input with id "categoryInput", "amountInput","dateInput" and make a button with id "expenseInput" with onclick function as "setExpense()" -->        
+                          <!-- create 3 div with class as "box" for all 3 and take input with id "categoryInput", "amountInput","dateInput" and make a button with id "expenseInput" with onclick function as "setExpense()" --> 
+                          <div class="box">
+                            <p>Category:</p>
+                            <input type="text" placeholder="Enter name of expense" id="categoryInput"/>
+                          </div>
+                          <div class="box">
+                            <p>Amount:</p>
+                            <input type="number" placeholder="Expense amount" id="amountInput"/>
+                          </div>
+                          <div class="box">
+                            <p id="date">Date:</p>
+                            <input type="date" placeholder="expense date" id="dateInput"  />
+                          </div>
+                          <button type="submit" id="expenseInput" onclick=setExpense()>
+                            Enter expense
+                          </button>           
                       </div>
                     </div>
       
@@ -40,9 +77,20 @@
                   <div class="bottom-wrapper">
                     <h1 class="title" style="font-family: roboto; text-align: left;">Expense List</h1>
                       <!-- create a table to display category amount date and to add a delete button and it has a tbody with id "expense_body" -->
+                       <table>
+                        <thead>
+                          <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody id="expense_body"></tbody>
+                       </table>
                   </div>
               </div>
             </main>
-          <script src="index.js"></script>
+          <script src="./index.js"></script>
         </body>
       </html>
