@@ -1,5 +1,5 @@
 function onPageLoad() {
-  // displayData();
+  // displayData(); 
   // inputDate();
   // displayExpenseList();
 }
@@ -58,58 +58,61 @@ function setExpense() {//1.4 select element by id eg  const categoryInput = docu
       resetInput("amountInput");
       resetInput("dateInput");
 //1.7
-      clearDisplayList(); 
+      
       onPageLoad();
     }
   } else {
     alert("enter amount greater than 0");
   }
 }
-
+//1.8
 function inputDate() {
-  const date = new Date();
-  const todayDate = date.getDate();
-  const todayMonth = String(date.getMonth() + 1).padStart(2, "0");
-  const todayYear = date.getFullYear();
-  const fullDate = `${todayYear}-${todayMonth}-${todayDate}`;
-  const inputdate = document.getElementById("dateInput");
-  inputdate.setAttribute("max", fullDate);
+  // const date = new Date();
+  // const todayDate = date.getDate();
+  // const todayMonth = String(date.getMonth() + 1).padStart(2, "0");
+  // const todayYear = date.getFullYear();
+  // const fullDate = `${todayYear}-${todayMonth}-${todayDate}`;
+  // const inputdate = document.getElementById("dateInput");
+  // inputdate.setAttribute("max", fullDate);
 }
 
 function displayExpenseList() {
+  //1.9 get value from local
   let getExpense = localStorage.getItem("expenseAll");
   getExpense = JSON.parse(getExpense);
+  //1.10 display all the data
   getExpense.map((data, index) => {
+    //1.11 create a row
     const create_row = document.createElement("tr");
+    //1.12 add cells to the row
     addRowCell(data.categoryInput, create_row);
     addRowCell(data.amountInput, create_row);
     addRowCell(data.dateInput, create_row);
-
     const buttonRowCell = document.createElement("button");
     buttonRowCell.innerHTML = "Remove";
     create_row.append(buttonRowCell);
-
-    buttonRowCell.addEventListener("click", () => {
-      let expenseData = getExpense;
-      expenseData.splice(index, 1); // remove 1 item at index
-      localStorage.setItem("expenseAll", JSON.stringify(expenseData));
-      onPageLoad();
-    });
-
-    const expenseTableBody = document.getElementById("expense_body");
-    expenseTableBody.append(create_row); // adding the newley created row to existing table
+//1.13 add a event listener to remove button to delete the expense
+    // buttonRowCell.addEventListener("click", () => {
+    //   let expenseData = getExpense;
+    //   expenseData.splice(index, 1); // remove 1 item at index
+    //   localStorage.setItem("expenseAll", JSON.stringify(expenseData));
+    //   onPageLoad();
+    // });
+//1.14 selecte element from html and add the new row to it
+    // const expenseTableBody = document.getElementById("expense_body");
+    // expenseTableBody.append(create_row); 
   });
 }
 
-function addRowCell(rowCellValue, mainRow) {
-  const createRowCell = document.createElement("td");
-  createRowCell.innerHTML = rowCellValue;
-  mainRow.append(createRowCell);
+function addRowCell(rowCellValue, mainRow) { // 1.15 create a row cell and append it to mainRow
+  // const createRowCell = document.createElement("td");
+  // createRowCell.innerHTML = rowCellValue;
+  // mainRow.append(createRowCell);
 }
 
 
 
-function clearDisplayList() {
+function clearDisplayList() { // 1.16  clear the old data from table other wise old and new all will be appened to the old table 
   const expenseTableBody = document.getElementById("expense_body");
   expenseTableBody.innerHTML = "";
 
