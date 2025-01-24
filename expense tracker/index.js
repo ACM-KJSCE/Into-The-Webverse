@@ -13,11 +13,9 @@ function resetInput(inputId) { // 1.2 write a func to take id and reset value
 }
 
 function displayData() {
-//1.3 displayBudget
-  displayBudget = document.getElementById("displayBudget");
-  const budgetValue = localStorage.getItem("budget"); 
-  displayBudget.innerText = budgetValue; 
-//
+//1.3 use displayBudget id display the stored button
+  
+//1.17 
   let getExpense = localStorage.getItem("expenseAll");
   getExpense = JSON.parse(getExpense);
   let totalExpenditure = 0;
@@ -117,6 +115,7 @@ function clearDisplayList() { // 1.16  clear the old data from table other wise 
   expenseTableBody.innerHTML = "";
 
 }
+
 
 
 
