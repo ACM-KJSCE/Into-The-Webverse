@@ -1,69 +1,67 @@
-function onPageLoad() {
-  // displayData(); 
-  // inputDate();
-  // displayExpenseList();
-}
+/* 
+1.1 
+ - select budgetInput as id 
+ - check if greater than 0 
+ - save it to local storage 
+ - call onPageLoad and resetInput function
+*/
+function setBudget() {
 
-function setBudget() { //1.1 write value to local check >1 reset value 
-
-  
 }
-function resetInput(inputId) { // 1.2 write a func to take id and reset value
+/*
+1.2
+ - using inputId parameter change the value
+*/
+function resetInput(inputId) {
 
 }
 
 function displayData() {
-//1.3 use displayBudget id display the stored button
-  
-//1.17 
-  let getExpense = localStorage.getItem("expenseAll");
-  getExpense = JSON.parse(getExpense);
-  let totalExpenditure = 0;
-  const displayExpenditure = document.getElementById("displayExpenditure");
-  clearDisplayList();
-  getExpense.map((data) => {
-    totalExpenditure += Math.abs(parseInt(data.amountInput));
-  });
-  displayExpenditure.innerText = totalExpenditure || 0; // it can break if sum of all amount is more than 10^21 or approx ig can add a check and disable user from adding more expense too much complication
-  const displayBalance = document.getElementById("displayBalance");
-  let balanceValue = budgetValue - totalExpenditure;
-  displayBalance.innerText = balanceValue;
-}
+  /*
+  1.3
+ - select displayBudget as id 
+ - get value from local storage 
+ - use innertext to update value
+ - call displayData inside the onPageLoad function
+  */
 
-function setExpense() {//1.4 select element by id eg  const categoryInput = document.getElementById("categoryInput"); check amount >0 and check if all input value have value
- 
-  if (amountInput.value > 0) {
-    if (categoryInput.value && amountInput.value && dateInput.value) {
 
-      const expenseListData = { // ??
-      
-        categoryInput: categoryInput.value,
-        amountInput: amountInput.value,
-        dateInput: dateInput.value,
-      };
-//1.5 save to local check if already exists and append 
-      let expenseListLocalStorage = localStorage.getItem("expenseAll"); // we get the old data(if any) from local storage
-      expenseListLocalStorage = expenseListLocalStorage
-        ? JSON.parse(expenseListLocalStorage)
-        : []; //ternary conditon ? if true use this : if false use this json parse Converts a JavaScript Object Notation (JSON) string into an object.
-      expenseListLocalStorage.push(expenseListData); // add value of expense to the main expense list
-      localStorage.setItem(
-        "expenseAll",
-        JSON.stringify(expenseListLocalStorage)
-      ); // save updated expense value to local storage
-//1.6 reset input fields value using resetInput() function we created
-      resetInput("categoryInput");
-      resetInput("amountInput");
-      resetInput("dateInput");
-//1.7
-      
-      onPageLoad();
-    }
-  } else {
-    alert("enter amount greater than 0");
-  }
+  /*1.10
+ - read expenseAll value from localstorage
+ - map through all the value and use the sum of amountInput value as totalExpenditure
+ - select displayExpenditure by id and update it value to totalExpenditure
+ - select displayBalance by id and update the value using innerText
+*/
+
 }
-//1.8
+function onPageLoad() {
+  //1.3 call displayBudgetData()
+
+  //1.5 call inputDate()
+
+  // 1.7 call displayExpenseList()
+
+}
+/*
+1.4
+ - select categoryInput,amountInput,dateInput as id
+ - check if amount is greater than 0 and other input fields have value
+ - create a json object with name expenseListData
+ - create a new varible expenseListLocalStorage to read data from local storage
+ - save data to database
+ - reset values of input fields using resetInput()
+ - call clearDisplaylist and onPageLoad
+*/
+function setExpense() {
+
+}
+/*
+1.5
+ - it is used to disable user from selecting future dates
+ - we use inbuild Date function to get todays date
+ - use .setAttribute to change max value user can select to today
+ - call it inside the onPageLoad function
+*/
 function inputDate() {
   // const date = new Date();
   // const todayDate = date.getDate();
@@ -74,48 +72,37 @@ function inputDate() {
   // inputdate.setAttribute("max", fullDate);
 }
 
+/*
+1.6
+ - get value of all the expense stored in localstorage
+ - call clearDisplayList
+ - we map all the values to read them one by one
+ - create a new row,cell,button using .createElement 
+ - use addRowCell function to create the cells
+ - add an event listener on the button you created
+ - when clicked remove that data and save it to localstorage
+ - appened the row you just created to the existing table with id expense_body
+ */
 function displayExpenseList() {
-  //1.9 get value from local
-  let getExpense = localStorage.getItem("expenseAll");
-  getExpense = JSON.parse(getExpense);
-  //1.10 display all the data
-  getExpense.map((data, index) => {
-    //1.11 create a row
-    const create_row = document.createElement("tr");
-    //1.12 add cells to the row
-    addRowCell(data.categoryInput, create_row);
-    addRowCell(data.amountInput, create_row);
-    addRowCell(data.dateInput, create_row);
-    const buttonRowCell = document.createElement("button");
-    buttonRowCell.innerHTML = "Remove";
-    create_row.append(buttonRowCell);
-//1.13 add a event listener to remove button to delete the expense
-    // buttonRowCell.addEventListener("click", () => {
-    //   let expenseData = getExpense;
-    //   expenseData.splice(index, 1); // remove 1 item at index
-    //   localStorage.setItem("expenseAll", JSON.stringify(expenseData));
-    //   onPageLoad();
-    // });
-//1.14 selecte element from html and add the new row to it
-    // const expenseTableBody = document.getElementById("expense_body");
-    // expenseTableBody.append(create_row); 
-  });
+
 }
-
-function addRowCell(rowCellValue, mainRow) { // 1.15 create a row cell and append it to mainRow
-  // const createRowCell = document.createElement("td");
-  // createRowCell.innerHTML = rowCellValue;
-  // mainRow.append(createRowCell);
-}
-
-
-
-function clearDisplayList() { // 1.16  clear the old data from table other wise old and new all will be appened to the old table 
-  const expenseTableBody = document.getElementById("expense_body");
-  expenseTableBody.innerHTML = "";
+/*
+1.7
+ - use .createElement to create a new cell("td") 
+ - changes it value using innerText
+*/
+function addRowCell(rowCellValue, mainRow) {
 
 }
 
+/*
+1.8
+ - select the table by using the id expense_body and change its value
+*/
+function clearDisplayList() {
+
+}
+// 1.10 go to displayData function
 
 
 
@@ -141,131 +128,3 @@ function clearDisplayList() { // 1.16  clear the old data from table other wise 
 
 
 
-// function onPageLoad() {
-//   displayData();
-//   inputDate();
-//   displayExpenseList();
-// }
-
-// function setBudget() {
-//   const budgetInput = document.getElementById("budgetInput");
-//   if (budgetInput.value > 0) {
-//     localStorage.setItem("budget", budgetInput.value);
-//     resetInput("budgetInput");
-//     clearDisplayList();
-//     onPageLoad();
-//   } else {
-//     alert("enter budget greater than 0");
-//   }
-  
-// }
-
-// function displayData() {
-//   // displays all the data on website
-//   displayBudget = document.getElementById("displayBudget");
-//   const budgetValue = localStorage.getItem("budget"); // read data from local storage
-//   displayBudget.innerText = budgetValue; // use .innerText to change value
-
-//   let getExpense = localStorage.getItem("expenseAll");
-//   getExpense = JSON.parse(getExpense);
-//   let totalExpenditure = 0;
-//   const displayExpenditure = document.getElementById("displayExpenditure");
-//   clearDisplayList();
-//   getExpense.map((data) => {
-//     totalExpenditure += Math.abs(parseInt(data.amountInput));
-//   });
-//   displayExpenditure.innerText = totalExpenditure || 0; // it can break if sum of all amount is more than 10^21 or approx ig can add a check and disable user from adding more expense too much complication
-
-//   let displayBalance = document.getElementById("displayBalance");
-//   let balanceValue = budgetValue - totalExpenditure;
-//   displayBalance.innerText = balanceValue;
-// }
-
-// function setExpense() {
-//   const categoryInput = document.getElementById("categoryInput");
-//   const amountInput = document.getElementById("amountInput");
-//   const dateInput = document.getElementById("dateInput");
-//   if (amountInput.value > 0) {
-//     if (categoryInput.value && amountInput.value && dateInput.value) {
-//       // to check if all the input fields are not empty
-//       const expenseListData = {
-//         // create dic to store data
-//         categoryInput: categoryInput.value,
-//         amountInput: amountInput.value,
-//         dateInput: dateInput.value,
-//       };
-
-//       let expenseListLocalStorage = localStorage.getItem("expenseAll"); // we get the old data(if any) from local storage
-//       expenseListLocalStorage = expenseListLocalStorage
-//         ? JSON.parse(expenseListLocalStorage)
-//         : []; //ternary conditon ? if true use this : if false use this json parse Converts a JavaScript Object Notation (JSON) string into an object.
-//       expenseListLocalStorage.push(expenseListData); // add value of expense to the main expense list
-//       localStorage.setItem(
-//         "expenseAll",
-//         JSON.stringify(expenseListLocalStorage)
-//       ); // save updated expense value to local storage
-
-//       resetInput("categoryInput");
-//       resetInput("amountInput");
-//       resetInput("dateInput");
-
-//       clearDisplayList(); // clear old data in table
-//       onPageLoad();
-//     }
-//   } else {
-//     alert("enter amount greater than 0");
-//   }
-// }
-
-// function inputDate() {
-//   const date = new Date();
-//   const todayDate = date.getDate();
-//   const todayMonth = String(date.getMonth() + 1).padStart(2, "0");
-//   const todayYear = date.getFullYear();
-//   const fullDate = `${todayYear}-${todayMonth}-${todayDate}`;
-//   const inputdate = document.getElementById("dateInput");
-//   inputdate.setAttribute("max", fullDate);
-// }
-
-// function displayExpenseList() {
-//   let getExpense = localStorage.getItem("expenseAll");
-//   getExpense = JSON.parse(getExpense);
-//   getExpense.map((data, index) => {
-//     const create_row = document.createElement("tr");
-//     addRowCell(data.categoryInput, create_row);
-//     addRowCell(data.amountInput, create_row);
-//     addRowCell(data.dateInput, create_row);
-
-//     const buttonRowCell = document.createElement("button");
-//     buttonRowCell.innerHTML = "Remove";
-//     create_row.append(buttonRowCell);
-
-//     buttonRowCell.addEventListener("click", () => {
-//       let expenseData = getExpense;
-//       expenseData.splice(index, 1); // remove 1 item at index
-//       localStorage.setItem("expenseAll", JSON.stringify(expenseData));
-//       onPageLoad();
-//     });
-
-//     const expenseTableBody = document.getElementById("expense_body");
-//     expenseTableBody.append(create_row); // adding the newley created row to existing table
-//   });
-// }
-
-// function addRowCell(rowCellValue, mainRow) {
-//   const createRowCell = document.createElement("td");
-//   createRowCell.innerHTML = rowCellValue;
-//   mainRow.append(createRowCell);
-// }
-
-// function resetInput(inputId) {
-//   const inputField = document.getElementById(inputId);
-//   inputField.value = "";
-// }
-
-// function clearDisplayList() {
-//   const expenseTableBody = document.getElementById("expense_body");
-//   expenseTableBody.innerHTML = "";
-//   const displayExpenditure = document.getElementById("displayExpenditure");
-//   displayExpenditure.innerText = "";
-// }
