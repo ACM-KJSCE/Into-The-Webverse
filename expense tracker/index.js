@@ -35,10 +35,10 @@ function displayData() {
 
 }
 function onPageLoad() {
-  //1.3 call displayBudgetData()
+  //1.3 call displayData()
 
   //1.5 call inputDate()
-
+  
   // 1.7 call displayExpenseList()
 
 }
@@ -103,28 +103,3 @@ function clearDisplayList() {
 
 }
 // 1.10 go to displayData function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
