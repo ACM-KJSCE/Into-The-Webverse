@@ -144,15 +144,21 @@ button:hover{
 }
 
 .bottom-wrapper {
-  padding: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 0 15px 35px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(6px);
   overflow-y: scroll;
-  max-height: 40vh;
+  max-height: 35vh;
   overflow-x: hidden;
   text-shadow: none;
+  margin-top: 0px;
+  color: white;
+}
+
+.table {
+  margin: 20px;
 }
 
 .bottom-wrapper td {
@@ -164,29 +170,27 @@ button:hover{
 
 table {
   border-collapse: collapse;
+  margin: 10px;
   overflow: scroll;
-  border: 2px solid black;
-  border-radius: 100px;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 th {
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 10px;
   padding: 8px;
   text-align: left;
   background-color: #ff2433;
-  color: white;
-  width: 150px;
   text-align: left;
+  border: 1px solid black;
 }
 
-
 tr, tr button, td {
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 10px;
   padding: 8px;
-  color: white;
-  width: 150px;
   text-align: left;
+  border: 1px solid black;
 }
 
 
@@ -200,10 +204,11 @@ tr, tr button, td {
   .wrapper {
     justify-content: center;
     align-items: center;
+    margin: 0;
   }
 
   .top-wrapper {
-    padding: 10px 0;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -215,7 +220,7 @@ tr, tr button, td {
 
 @media  screen and (max-width: 480px) {
   .title{
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .wrapper{
@@ -227,6 +232,17 @@ tr, tr button, td {
     align-items: center;
     gap: 1rem;
     width: 90vw;
+    padding: 10px;
+  }
+
+  .bottom-wrapper {
+    font-size: 12px;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  button{
+    font-size: 12px;
   }
 
   input{
