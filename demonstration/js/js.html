@@ -22,7 +22,9 @@
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 300px;
+        width: 350px;
+        min-height: 300px;
+        
       }
 
       .box {
@@ -38,7 +40,58 @@
       .box:hover {
         background-color: #45a049;
       }
+    
+#container1 button{
 
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        width: 340px;
+        height: fit-content;
+}
+#container1 button:hover{
+  cursor: pointer;
+}
+#container2{
+  display: flex;
+  flex-direction: column;
+}
+#container2 input{
+  width: 200px;
+  align-self: center;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+#container2 button{
+  margin: 20px 0;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        width: fit-content;
+        height: fit-content;
+        align-self: center;
+}
+#container3 button{
+  margin: 20px 0;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        font-size: 25px;
+        transition: background-color 0.3s ease;
+        width: 150px;
+        height: fit-content;
+        align-self: center;
+}
       .btn {
         padding: 10px 20px;
         background-color: #2196f3;
@@ -54,7 +107,34 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="onPageLoad()" >
+
+
+
+    <!-- <div class="container">
+<h1>const let var</h1>
+<button id="update">+5</button>
+    </div> -->
+
+
+    <div class="container" id="container1">
+<button id="updateId"  >Update using getElementById()</button>
+<button  class="updateClass">Update using getElementByClass()</button>
+<button class="updateBoth" id="updateBoth" >Update using querySelector(# , .)</button>
+          </div>
+      
+    <div class="container" id="container2">
+      <h1>hello  <span id="explainInnerhtml"></span> </h1>
+         <input type="text" id="inputValue">
+
+         <button onclick="showInnerhtml()" >update value</button>
+    </div>
+
+
+    <div class="container" id="container3">
+     <h1>EventListener</h1>
+      <button id="clickmebutton">click me</button>
+    </div>
     <div class="container">
       <h1>Change Content with JavaScript</h1>
       <div id="content-box" class="box">
