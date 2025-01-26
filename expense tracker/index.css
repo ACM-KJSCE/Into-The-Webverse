@@ -47,7 +47,7 @@ body {
   filter: invert(1);
   position: absolute;
   z-index: 1;
-  bottom: -8vh;
+  bottom: 0;
   right: 30vw;
   overflow-x: hidden;
   z-index: -1;
@@ -150,7 +150,7 @@ button:hover{
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(6px);
   overflow-y: scroll;
-  max-height: 35vh;
+  max-height: 24vh;
   overflow-x: hidden;
   text-shadow: none;
   margin-top: 0px;
@@ -171,18 +171,20 @@ button:hover{
 table {
   border-collapse: collapse;
   margin: 10px;
-  overflow: scroll;
   border-radius: 10px;
   border: 1px solid black;
 }
 th {
   border: 1px solid black;
+  border-color: none;
+
   margin: 10px;
   padding: 8px;
   text-align: left;
   background-color: #ff2433;
   text-align: left;
-  border: 1px solid black;
+  justify-content: space-between;
+  width: 100%;
 }
 
 tr, tr button, td {
@@ -190,16 +192,29 @@ tr, tr button, td {
   margin: 10px;
   padding: 8px;
   text-align: left;
-  border: 1px solid black;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #007fd7;
+  border-radius: 100vw;
+  margin-block: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #de0606;
+  border-radius: 100vw;
+  margin-block: 0.5em;
 }
 
 
 
 
 @media screen and (max-width: 1024px) {
-  body{
-    overflow-y: auto;
-  }
 
   .wrapper {
     justify-content: center;
@@ -238,8 +253,9 @@ tr, tr button, td {
   .bottom-wrapper {
     font-size: 12px;
     width: 100%;
-    max-height: 100%;
+    max-height: 100%;    
   }
+
 
   button{
     font-size: 12px;
@@ -249,21 +265,11 @@ tr, tr button, td {
     width: 100%;
   }
 
+  table {
+    display: block;
+    width: 95%;
+  }
+
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 0.5em;
-}
 
-::-webkit-scrollbar-track {
-  background: #007fd7;
-  border-radius: 100vw;
-  margin-block: 0.2em;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #de0606;
-  border-radius: 100vw;
-  margin-block: 0.5em;
-}
