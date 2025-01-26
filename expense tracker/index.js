@@ -1,4 +1,3 @@
-
 /* 
 1.1 
  - select budgetInput as id 
@@ -26,6 +25,10 @@ function displayData() {
  - call displayData inside the onPageLoad function
   */
 
+  // const displayBudget = document.getElementById("displayBudget");
+  // const budgetValue = localStorage.getItem("budget");
+  // displayBudget.innerText = budgetValue;
+
 
   /*1.10
  - read expenseAll value from localstorage
@@ -33,13 +36,24 @@ function displayData() {
  - select displayExpenditure by id and update it value to totalExpenditure
  - select displayBalance by id and update the value using innerText
 */
+  // let getExpense = localStorage.getItem("expenseAll");
+  // getExpense = JSON.parse(getExpense);
+  // let totalExpenditure = 0;
+  // const displayExpenditure = document.getElementById("displayExpenditure");
+  // getExpense.map((data) => {
+  //   totalExpenditure += parseInt(data.amountInput);
+  // });
+  // displayExpenditure.innerText = totalExpenditure || 0;
 
+  // let displayBalance = document.getElementById("displayBalance");
+  // let balanceValue = budgetValue - totalExpenditure;
+  // displayBalance.innerText = balanceValue || 0;
 }
 function onPageLoad() {
-  //1.3 call displayData()
+  //1.3 call displayBudgetData()
 
   //1.5 call inputDate()
-  
+
   // 1.7 call displayExpenseList()
 
 }
@@ -55,6 +69,37 @@ function onPageLoad() {
 */
 function setExpense() {
 
+  // const categoryInput = document.getElementById("categoryInput");
+  // const amountInput = document.getElementById("amountInput");
+  // const dateInput = document.getElementById("dateInput");
+
+
+  // if (amountInput.value > 0) {
+  //   if (categoryInput.value && amountInput.value && dateInput.value) {
+
+
+      // const expenseListData = {
+      //   categoryInput: categoryInput.value,
+      //   amountInput: amountInput.value,
+      //   dateInput: dateInput.value,
+      // };
+
+      // let expenseListLocalStorage = localStorage.getItem("expenseAll");
+      // expenseListLocalStorage = expenseListLocalStorage ? JSON.parse(expenseListLocalStorage) : [];
+      // expenseListLocalStorage.push(expenseListData);
+      // localStorage.setItem("expenseAll",JSON.stringify(expenseListLocalStorage));
+
+      // resetInput("categoryInput");
+      // resetInput("amountInput");
+      // resetInput("dateInput");
+      // clearDisplayList();
+      // onPageLoad();
+
+
+  //   }
+  // } else {
+  //   alert("enter amount greater than 0");
+  // }
 }
 /*
 1.5
@@ -86,6 +131,30 @@ function inputDate() {
  */
 function displayExpenseList() {
 
+  // let getExpense = localStorage.getItem("expenseAll");
+  // getExpense = JSON.parse(getExpense);
+  // clearDisplayList();
+
+  // getExpense.map((data, index) => {
+
+  //   const create_row = document.createElement("tr");
+  //   addRowCell(data.categoryInput, create_row);
+  //   addRowCell(data.amountInput, create_row);
+  //   addRowCell(data.dateInput, create_row);
+
+  //   const buttonRowCell = document.createElement("button");
+  //   buttonRowCell.innerHTML = "Remove";
+  //   create_row.append(buttonRowCell);
+
+  //   buttonRowCell.addEventListener("click", () => {
+  //     getExpense.splice(index, 1);
+  //     localStorage.setItem("expenseAll", JSON.stringify(getExpense));
+  //     onPageLoad();
+  //   });
+
+  //   const expenseTableBody = document.getElementById("expense_body");
+  //   expenseTableBody.append(create_row);
+  // });
 }
 /*
 1.7
