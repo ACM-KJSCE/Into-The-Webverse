@@ -23,7 +23,8 @@
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         width: 350px;
-        min-height: 300px;
+        min-height: 330px;
+        margin-right: 5px;
         
       }
 
@@ -52,9 +53,11 @@
         transition: background-color 0.3s ease;
         width: 340px;
         height: fit-content;
+        border: none;
 }
 #container1 button:hover{
   cursor: pointer;
+   background-color: #45a049;
 }
 #container2{
   display: flex;
@@ -71,7 +74,7 @@
 #container2 button{
   margin: 20px 0;
         padding: 10px;
-        background-color: #4caf50;
+        background-color: #2196f3;
         color: white;
         border-radius: 5px;
         font-size: 16px;
@@ -79,11 +82,21 @@
         width: fit-content;
         height: fit-content;
         align-self: center;
+        border: none;
+}
+#container2 button:hover{
+  cursor: pointer;
+  background-color: #0b7dda;
+}
+
+#container3 button:hover{
+  cursor: pointer;
+  background-color: #0b7dda;
 }
 #container3 button{
   margin: 20px 0;
         padding: 10px;
-        background-color: #4caf50;
+        background-color: #2196f3;
         color: white;
         border-radius: 5px;
         font-size: 25px;
@@ -91,6 +104,7 @@
         width: 150px;
         height: fit-content;
         align-self: center;
+        border: none;
 }
       .btn {
         padding: 10px 20px;
@@ -118,13 +132,15 @@
 
 
     <div class="container" id="container1">
+     <h1>Query Selectors</h1>
 <button id="updateId"  >Update using getElementById()</button>
 <button  class="updateClass">Update using getElementByClass()</button>
 <button class="updateBoth" id="updateBoth" >Update using querySelector(# , .)</button>
           </div>
       
     <div class="container" id="container2">
-      <h1>hello  <span id="explainInnerhtml"></span> </h1>
+      <h1>Innertext</h1>
+      <h2>hello  <span id="explainInnerhtml"></span> </h2>
          <input type="text" id="inputValue">
 
          <button onclick="showInnerhtml()" >update value</button>
@@ -132,7 +148,7 @@
 
 
     <div class="container" id="container3">
-     <h1>EventListener</h1>
+     <h1>Event Listener</h1>
       <button id="clickmebutton">click me</button>
     </div>
     <div class="container">

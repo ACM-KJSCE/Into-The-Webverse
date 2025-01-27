@@ -32,12 +32,15 @@ const updateClass = document.getElementsByClassName("updateClass")[0]
 const updateBoth = document.querySelector("#updateBoth") //const updateBoth = document.querySelector(".updateId")
 updateId.addEventListener("click",()=>{
     updateId.innerText=`Updated using .getElementById("updateId") `
+    updateId.style=" background-color: #2196f3;"
 })
 updateClass.addEventListener("click",()=>{
     updateClass.innerText=`Updated using .getElementsByClassName("updateClass")[0] `
+    updateClass.style=" background-color: #2196f3;"
 })
 updateBoth.addEventListener("click",()=>{
     updateBoth.innerText=`Updated using .querySelector("#updateBoth") `
+    updateBoth.style=" background-color: #2196f3;"
 })
 function showInnerhtml(){
 
@@ -54,6 +57,14 @@ clickmebutton.addEventListener("click",()=>{
     alert("hello everyone welcome to Into The Webverse")
 })
 
+
+
+const var1 = 10;
+var1 = 11;
+let vaar2  = 20;
+vaar2 = 10;
+var num1 = 10;
+var num1  = 5;
 
 function onPageLoad(){
 
