@@ -15,6 +15,7 @@ button2.onclick = function () {
 };
 
 
+<<<<<<< HEAD
 
 
 //const
@@ -78,3 +79,5 @@ DOM Manipulation
 Event Listners
 
 */
+=======
+>>>>>>> 2186cd9a1e56651a2be8e7955543ad2936b1265a
