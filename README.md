@@ -3,7 +3,7 @@
 # [Visit the final website here](https://webverse.kjsce.hosting.acm.org/)
 
 
-<a href="https://webverse.kjsce.hosting.acm.org/"><img src="./expense tracker/assets/ExpenseTracker.png" alt="Expense Tracker" /></a>
+<a href="https://webverse.kjsce.hosting.acm.org/"><img src="./assets/ExpenseTracker.png" alt="Expense Tracker" /></a>
 
 
 Presented by KJSCE-ACM
