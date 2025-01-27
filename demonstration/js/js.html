@@ -22,14 +22,10 @@
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
         width: 350px;
+        min-height: 300px;
         min-height: 330px;
         margin-right: 5px;
-        
-=======
-        width: 300px;
->>>>>>> 2186cd9a1e56651a2be8e7955543ad2936b1265a
       }
 
       .box {
@@ -46,7 +42,7 @@
         background-color: #45a049;
       }
 
-<<<<<<< HEAD
+      #container1 button {
         margin: 20px 0;
         padding: 10px;
         background-color: #4caf50;
@@ -57,26 +53,27 @@
         width: 340px;
         height: fit-content;
         border: none;
-}
-#container1 button:hover{
-  cursor: pointer;
-   background-color: #45a049;
-}
-#container2{
-  display: flex;
-  flex-direction: column;
-}
-#container2 input{
-  width: 200px;
-  align-self: center;
-  height: 30px;
-  font-size: 20px;
-  border-radius: 10px;
-  padding: 10px;
-}
-#container2 button{
-  margin: 20px 0;
+      }
+      #container1 button:hover {
+        cursor: pointer;
+        background-color: #45a049;
+      }
+      #container2 {
+        display: flex;
+        flex-direction: column;
+      }
+      #container2 input {
+        width: 200px;
+        align-self: center;
+        height: 30px;
+        font-size: 20px;
+        border-radius: 10px;
         padding: 10px;
+      }
+      #container2 button {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #4caf50;
         background-color: #2196f3;
         color: white;
         border-radius: 5px;
@@ -86,19 +83,19 @@
         height: fit-content;
         align-self: center;
         border: none;
-}
-#container2 button:hover{
-  cursor: pointer;
-  background-color: #0b7dda;
-}
-
-#container3 button:hover{
-  cursor: pointer;
-  background-color: #0b7dda;
-}
-#container3 button{
-  margin: 20px 0;
+      }
+      #container2 button:hover {
+        cursor: pointer;
+        background-color: #0b7dda;
+      }
+      #container3 button:hover {
+        cursor: pointer;
+        background-color: #0b7dda;
+      }
+      #container3 button {
+        margin: 20px 0;
         padding: 10px;
+        background-color: #4caf50;
         background-color: #2196f3;
         color: white;
         border-radius: 5px;
@@ -108,9 +105,7 @@
         height: fit-content;
         align-self: center;
         border: none;
-}
-=======
->>>>>>> 2186cd9a1e56651a2be8e7955543ad2936b1265a
+      }
       .btn {
         padding: 10px 20px;
         background-color: #2196f3;
@@ -126,40 +121,29 @@
       }
     </style>
   </head>
-<<<<<<< HEAD
-  <body onload="onPageLoad()" >
-
-
-
-    <!-- <div class="container">
-<h1>const let var</h1>
-<button id="update">+5</button>
-    </div> -->
-
-
+  <body>
     <div class="container" id="container1">
-     <h1>Query Selectors</h1>
-<button id="updateId"  >Update using getElementById()</button>
-<button  class="updateClass">Update using getElementByClass()</button>
-<button class="updateBoth" id="updateBoth" >Update using querySelector(# , .)</button>
-          </div>
-      
+      <h1>Query Selectors</h1>
+      <button id="updateId">Update using getElementById()</button>
+      <button class="updateClass">Update using getElementByClass()</button>
+      <button class="updateBoth" id="updateBoth">
+        Update using querySelector(# , .)
+      </button>
+    </div>
+
     <div class="container" id="container2">
       <h1>Innertext</h1>
-      <h2>hello  <span id="explainInnerhtml"></span> </h2>
-         <input type="text" id="inputValue">
+      <h2>hello <span id="explainInnerhtml"></span></h2>
+      <input type="text" id="inputValue" />
 
-         <button onclick="showInnerhtml()" >update value</button>
+      <button onclick="showInnerhtml()">update value</button>
     </div>
-
 
     <div class="container" id="container3">
-     <h1>Event Listener</h1>
+      <h1>Event Listener</h1>
       <button id="clickmebutton">click me</button>
     </div>
-=======
-  <body>
->>>>>>> 2186cd9a1e56651a2be8e7955543ad2936b1265a
+
     <div class="container">
       <h1>Change Content with JavaScript</h1>
       <div id="content-box" class="box">
@@ -168,6 +152,7 @@
       <button id="change-btn" class="btn">Change</button>
       <button id="reverse-btn" class="btn">Original</button>
     </div>
+    
     <script src="script.js"></script>
   </body>
 </html>
