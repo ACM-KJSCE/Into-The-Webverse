@@ -50,7 +50,7 @@ function displayData() {
   // displayBalance.innerText = balanceValue || 0;
 }
 function onPageLoad() {
-  //1.3 call displayBudgetData()
+  //1.3 call displayData()
 
   //1.5 call inputDate()
 
